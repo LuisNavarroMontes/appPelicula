@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="micolor">
+    <ion-title>{{informacion ?.Title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="dark">
+  <ion-card *ngIf="informacion" color ="micolor">
+  <ion-card-header text-center>
+    <ion-card-title>
+      {{informacion?.Title}}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item color = "micolor">
+      <ion-icon name="people" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion?.Actors}}</ion-label>
+    </ion-item>
+    <ion-item color = "micolor">
+      <ion-icon name="calendar-number-outline" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion?.Year}}</ion-label>
+    </ion-item>
+    <ion-item color = "micolor">
+      <ion-icon name="language-outline" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion?.Language}}</ion-label>
+    </ion-item>
+    <ion-item color = "micolor">
+      <ion-icon name="trending-up-outline" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion?.imdbRating}}</ion-label>
+    </ion-item>
+    <ion-item color = "micolor">
+      <ion-icon name="cash-outline" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion?.Director}}
+      </ion-label>
+    </ion-item>
+    <ion-item color = "micolor">
+      <ion-icon name="play-outline" slot="start"></ion-icon>
+      <ion-label text-wrap> {{informacion.Plot}}
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

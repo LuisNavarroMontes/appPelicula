@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-toolbar color ="micolor">
+    <ion-title>BusquedaPeliculas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-searchbar [(ngModel)]="busquedaTxtBox" (ionChange)="onTxtBusquedaChanged($event)" color = "dark"></ion-searchbar>
+  <ion-list color="dark">
+    <ion-item color="dark" button *ngFor="let peli of (resultados | async)" [routerLink]="['/', 'info', peli.imdbID]">
+      <ion-label text-wrap>
+        {{peli.Title}}
+      </ion-label>
+      <ion-icon slot="end" name="information-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
